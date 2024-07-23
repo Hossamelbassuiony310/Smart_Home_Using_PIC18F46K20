@@ -1,0 +1,49 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F431 `(v ~T0 @X0 0 tf ]
+"56 Modules/EEPROM_24C02C/../../mcc_generated_files/examples/i2c_master_example.h
+[; ;Modules/EEPROM_24C02C/../../mcc_generated_files/examples/i2c_master_example.h: 56: void I2C_Write1ByteRegister(i2c_address_t address, uint8_t reg, uint8_t data);
+[v _I2C_Write1ByteRegister `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"54
+[; ;Modules/EEPROM_24C02C/../../mcc_generated_files/examples/i2c_master_example.h: 54: uint8_t I2C_Read1ByteRegister(i2c_address_t address, uint8_t reg);
+[v _I2C_Read1ByteRegister `(uc ~T0 @X0 0 ef2`uc`uc ]
+"213 Modules/EEPROM_24C02C/../../mcc_generated_files/examples/../i2c_master.h
+[v _MSSP_InterruptHandler `*F431 ~T0 @X0 1 e ]
+"11 Modules/EEPROM_24C02C/EEPROM_24C02C.c
+[; ;Modules/EEPROM_24C02C/EEPROM_24C02C.c: 11: void EEPROM_240C02C_Write_Byte(i2c_address_t EEPROM_Address, i2c_address_t Byte_Address, uint8_t Data){
+[v _EEPROM_240C02C_Write_Byte `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+{
+[e :U _EEPROM_240C02C_Write_Byte ]
+[v _EEPROM_Address `uc ~T0 @X0 1 r1 ]
+[v _Byte_Address `uc ~T0 @X0 1 r2 ]
+[v _Data `uc ~T0 @X0 1 r3 ]
+[f ]
+"12
+[; ;Modules/EEPROM_24C02C/EEPROM_24C02C.c: 12:     I2C_Write1ByteRegister(EEPROM_Address, Byte_Address, Data);
+[e ( _I2C_Write1ByteRegister (3 , , _EEPROM_Address _Byte_Address _Data ]
+"13
+[; ;Modules/EEPROM_24C02C/EEPROM_24C02C.c: 13: }
+[e :UE 3 ]
+}
+"14
+[; ;Modules/EEPROM_24C02C/EEPROM_24C02C.c: 14: uint8_t EEPROM_240C02C_Read_Byte(i2c_address_t EEPROM_Address, i2c_address_t Byte_Address){
+[v _EEPROM_240C02C_Read_Byte `(uc ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _EEPROM_240C02C_Read_Byte ]
+[v _EEPROM_Address `uc ~T0 @X0 1 r1 ]
+[v _Byte_Address `uc ~T0 @X0 1 r2 ]
+[f ]
+"15
+[; ;Modules/EEPROM_24C02C/EEPROM_24C02C.c: 15:     uint8_t Rec_Value = 0x00;
+[v _Rec_Value `uc ~T0 @X0 1 a ]
+[e = _Rec_Value -> -> 0 `i `uc ]
+"16
+[; ;Modules/EEPROM_24C02C/EEPROM_24C02C.c: 16:     Rec_Value = I2C_Read1ByteRegister(EEPROM_Address, Byte_Address);
+[e = _Rec_Value ( _I2C_Read1ByteRegister (2 , _EEPROM_Address _Byte_Address ]
+"17
+[; ;Modules/EEPROM_24C02C/EEPROM_24C02C.c: 17:     return Rec_Value;
+[e ) _Rec_Value ]
+[e $UE 4  ]
+"18
+[; ;Modules/EEPROM_24C02C/EEPROM_24C02C.c: 18: }
+[e :UE 4 ]
+}
